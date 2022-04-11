@@ -1,0 +1,60 @@
+{% extends 'main.html' %}
+{% load token_index %}
+{% load symbol_filter %}
+{% block content %}
+    <div class="w-5/6 mx-auto my-5 py-2 bg-white">
+        <div class="d-flex justify-content-around gap-1">
+            <div class="w-100">
+                <div class="text-center bg-gray-900 text-white py-2"><h4>Token Type</h4></div>
+                {% for t in token %} {% if forloop.counter|divisibleby:2 %}
+                    <p class="w-100 m-1 px-1 py-2 bg-zinc-100">{{ t }}</p>
+                {% else %}
+                    <p class="w-100 m-1 px-1 py-2 bg-slate-50">{{ t }}</p>
+                {% endif %} {% endfor %}
+            </div>
+            <div class="w-100">
+                <div class="text-center bg-gray-900 text-white py-2"><h4>Symbol</h4></div>
+                {% for l in lexeme %} {% if forloop.counter|divisibleby:2 %}
+                    <p class="w-100 m-1 px-1 py-2 bg-zinc-100">{{ l }}</p>
+                {% else %}
+                    <p class="w-100 m-1 px-1 py-2 bg-slate-50">{{ l }}</p>
+                {% endif %} {% endfor %}
+            </div>
+            <div class="w-100">
+                <div class="text-center bg-gray-900 text-white py-2"><h4>Symbol ID</h4></div>
+                {% for l in lexeme %} {% if forloop.counter|divisibleby:2 %}
+                    <p class="w-100 m-1 px-1 py-2 bg-zinc-100"> {{ token|index:forloop.counter0 }}_{{ symbol_id | get_item:l }}</p>
+                {% else %}
+                    <p class="w-100 m-1 px-1 py-2 bg-zinc-100"> {{ token|index:forloop.counter0 }}_{{ symbol_id | get_item:l }}</p>
+                {% endif %} {% endfor %}
+                {#                {{ symbol_id.Counter }}#}
+            </div>
+            <div class="w-100">
+                <div class="text-center bg-gray-900 text-white py-2"><h4>Value</h4></div>
+                {% for l in lexeme %}
+                    {% if forloop.counter|divisibleby:2 %}
+                        {% if l|floatformat:"0" %}
+                            <p class="w-100 m-1 px-1 py-2 bg-zinc-100">{{ l }}</p>
+                        {% else %}
+                            <p class="w-100 m-1 px-1 py-2 bg-zinc-100">-</p>
+                        {% endif %}
+                    {% else %}
+                        {% if l|floatformat:"0" %}
+                            <p class="w-100 m-1 px-1 py-2 bg-zinc-100">{{ l }}</p>
+                        {% else %}
+                            <p class="w-100 m-1 px-1 py-2 bg-zinc-100">-</p>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="w-100">
+                <div class="text-center bg-gray-900 text-white py-2"><h4>Line Number</h4></div>
+                {% for r in row %} {% if forloop.counter|divisibleby:2 %}
+                    <p class="w-100 m-1 px-1 py-2 bg-zinc-100">{{ r }}</p>
+                {% else %}
+                    <p class="w-100 m-1 px-1 py-2 bg-slate-50">{{ r }}</p>
+                {% endif %} {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
