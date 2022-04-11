@@ -2,6 +2,7 @@
 The main goal of this project is to tokenize and generate the symbol table for a given input source program which is written in C programming language. Here Django framework has been used.
 
 Input source program: C language
+
 Used framework: Django 
 
 ===== Useful commands =====
