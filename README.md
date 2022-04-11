@@ -20,3 +20,7 @@ Used framework: Django
 (6) py manage.py runserver [for running the server]
 
 (7) py manage.py startapp base
+
+<img width="960" alt="Home" src="https://user-images.githubusercontent.com/76416888/162798355-f91ec64f-895c-4b86-bc3a-24cc94e37793.png">
+
+<img width="960" alt="Output" src="https://user-images.githubusercontent.com/76416888/162798481-b823d025-0303-4500-bef4-f6a499aa58be.png">
