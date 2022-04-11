@@ -6,11 +6,11 @@ Used framework: Django
 
 ===== Useful commands =====
 
-python -m venv env
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
-env\Scripts\activate [for activating the virtual environment]
-pip install -r requirements.txt [for installing requirements]
-py manage.py migrate [for reopening the local database]
-py manage.py runserver [for running the server]
+(1) python -m venv env
+(2) Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+(3) env\Scripts\activate [for activating the virtual environment]
+(4) pip install -r requirements.txt [for installing requirements]
+(5) py manage.py migrate [for reopening the local database]
+(6) py manage.py runserver [for running the server]
 
-py manage.py startapp base
+(7) py manage.py startapp base
